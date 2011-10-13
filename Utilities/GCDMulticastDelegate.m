@@ -436,7 +436,8 @@ static void GCDMulticastDelegateListNodeRelease(GCDMulticastDelegateListNode *no
 		
 		size_t ptrSize = sizeof(node);
 		
-		delegates = malloc(ptrSize * numDelegates);
+        if (numDelegates > 0)
+            delegates = malloc(ptrSize * numDelegates);
 		
 		// Remember that delegates is a pointer to an array of pointers.
 		// It's going to look something like this in memory:

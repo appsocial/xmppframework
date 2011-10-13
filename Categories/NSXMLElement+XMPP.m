@@ -14,7 +14,7 @@
 
 - (id)initWithName:(NSString *)name xmlns:(NSString *)ns
 {
-	if ([self initWithName:name])
+	if ((self = [self initWithName:name]))
 	{
 		[self setXmlns:ns];
 	}
