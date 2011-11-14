@@ -14,7 +14,7 @@
 	
 	strncpy(buf, [node UTF8String], sizeof(buf));
 	
-	if(stringprep_xmpp_nodeprep(buf, sizeof(buf)) != 0) return nil;
+	stringprep_xmpp_nodeprep(buf, sizeof(buf));
 	
 	return [NSString stringWithUTF8String:buf];
 }
