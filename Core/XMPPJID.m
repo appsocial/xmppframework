@@ -1,5 +1,4 @@
 #import "XMPPJID.h"
-#import "LibIDN.h"
 
 @implementation XMPPJID
 
@@ -87,9 +86,9 @@
 		}
 	}
 	
-	NSString *prepUser = [LibIDN prepNode:rawUser];
-	NSString *prepDomain = [LibIDN prepDomain:rawDomain];
-	NSString *prepResource = [LibIDN prepResource:rawResource];
+	NSString *prepUser = rawUser;
+	NSString *prepDomain = rawDomain;
+	NSString *prepResource = rawResource;
 	
 	if([XMPPJID validateUser:prepUser domain:prepDomain resource:prepResource])
 	{
@@ -144,9 +143,9 @@
 
 + (XMPPJID *)jidWithUser:(NSString *)user domain:(NSString *)domain resource:(NSString *)resource
 {
-	NSString *prepUser = [LibIDN prepNode:user];
-	NSString *prepDomain = [LibIDN prepDomain:domain];
-	NSString *prepResource = [LibIDN prepResource:resource];
+	NSString *prepUser = user;
+	NSString *prepDomain = domain;
+	NSString *prepResource = resource;
 	
 	if([XMPPJID validateUser:prepUser domain:prepDomain resource:prepResource])
 	{
